@@ -97,7 +97,7 @@ def numeralToInteger(myStr):
         length = len(myStr) - 1
         total = getValue(myStr[length])
         while i <= length:
-            if (getValue(myStr[length - i])) < (getValue(myStr[length])):
+            if (getValue(myStr[length - i])) < (getValue(myStr[length - i + 1])):
                 total -= getValue(myStr[length - i])
                 
             else:
@@ -115,7 +115,7 @@ def main():
     #runPalindrome("Natan")
     #runReverseString("Hello")
     #runLongestCommonPrefix(["flower", "flow"])
-    runRomanNumeral("MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMXIVXLXIXCCCDLCLDXXXIXXIXLIXXIXV")
+    runRomanNumeral("MMMCMXCIX")
 
 
 if __name__ == '__main__':
