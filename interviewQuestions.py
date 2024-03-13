@@ -108,14 +108,54 @@ def numeralToInteger(myStr):
 
 def runRomanNumeral(myStr):
     print(f"The Roman numeral {myStr} is equivalent to the integer {numeralToInteger(myStr)}.")
+
+
+def integerToNumeral(myInt):
+    def calcChar(r):
+        char = ''
+        val = 0
+        myList = []
+        if r >= 1000: 
+            char = 'M'
+            val = 1000
+        elif r >= 500:
+            char = 'D'
+            val = 500
+        elif r >= 100: 
+            char = 'C'
+            val = 100
+        elif r >= 50: 
+            char = 'L'
+            val = 50
+        elif r >= 10: 
+            char = 'X'
+            val = 10
+        elif r >= 5: 
+            char = 'V'
+            val = 5
+        elif r >= 1: 
+            char = 'I'
+            val = 1
+
+        myList = [char, val]
+        return myList
+
+    myStr = ""
+    while myInt > 0:
+        myChar, myVal = calcChar(myInt)
+        myInt -= myVal
+        myStr += myChar
+        print(len(myStr))
     
+    return myStr
 
 
 def main():
     #runPalindrome("Natan")
     #runReverseString("Hello")
     #runLongestCommonPrefix(["flower", "flow"])
-    runRomanNumeral("MMMCMXCIX")
+    #runRomanNumeral("MMMCMXCIX")
+    print(integerToNumeral(49))
 
 
 if __name__ == '__main__':
